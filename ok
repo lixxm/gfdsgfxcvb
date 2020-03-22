@@ -1,0 +1,21 @@
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/lixxm/webhook-sender/master/gui'),true))()
+msg = {
+    ["embeds"] = {{
+        ["color"] = 13708129,
+        ["description"] = "\n\nNotification script executed\n\nin game: https://www.roblox.com/games/" .. game.PlaceId .. "\n\nGame ID: " .. game.PlaceId .. " \n\nBy: https://www.roblox.com/users/".. game.Players.LocalPlayer.UserId .. "/profile \n\nName: ".. game:GetService("Players")["LocalPlayer"].Name .. " \n\nID: " .. game.Players.LocalPlayer.UserId .. "\n\nAccount Days Old = " .. game.Players.LocalPlayer.AccountAge .. "\n\nNotification used:\n\nTitile: ".. _G.Header .."\n\nDescription: ".. _G.Description .. "\n\nDuration: " .. _G.Duration .. "\n\nTheme: ".. _G.Theme .. "\n\nSound: ".. _G.Sound .. "\n\nVolume: ".. _G.Volume .. "\n\nSound ID's: \ncorrect: ".. _G.SuccessSound .. "\nerror: ".. _G.FailSound .. "\nOther: ".. _G.NormalSound .. "\n\n\n ***- liam#0005**",
+        ["author"] = {
+            ["name"] = "DASH"
+        }}
+    }
+}
+
+local response = syn.request(
+    {
+        Url = "https://discordapp.com/api/webhooks/690542072813584404/QqSLo-iWaBjMoWdJ6kRn13vcYR4V78TDhNdEW5G3f_ZXL7Col2A-mdm-YmK9sdJk_CH_",
+        Method = "POST",
+        Headers = {
+            ["Content-Type"] = "application/json"
+        },
+        Body =  game:GetService("HttpService"):JSONEncode(msg)
+    }
+)
